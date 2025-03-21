@@ -54,11 +54,14 @@ export const sendMessage = async (req, res) => {
             image: imageUrl,
         });
         await nuevoMessage.save();
+        /*
         //Comunicacion en tiempo real
         const receiverSocketId = getReceiverSocketId(receptorId);
         if (receiverSocketId) {
           io.to(receiverSocketId).emit("nuevoMessage", nuevoMessage);
         }
+        
+        */
         
         res.status(201).json(nuevoMessage);
     } catch (error) {
