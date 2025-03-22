@@ -9,7 +9,7 @@ const Navbar = () => {
                 {/* Si el usuario está autenticado, mostrar opciones de usuario */}
                 {authUser ? (
                     <nav className="flex gap-5 text-white text-2xl">
-                        <Link to="/buscar" className="hover:underline ml-100 mt-17">Buscar</Link>
+                        <Link to="/buscar" className="hover:underline ml-168 mt-17">Buscar</Link>
                         <Link to="/" className="hover:underline mt-17">Home</Link>
                         <Link to="/perfil" className="hover:underline mt-17">Perfil</Link>
                         <Link to="/amigos" className="hover:underline mt-17">Amigos</Link>

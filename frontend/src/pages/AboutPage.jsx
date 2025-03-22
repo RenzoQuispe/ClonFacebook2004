@@ -15,6 +15,8 @@ function AboutPage() {
                 <li>Buscar personas en tu institución</li>
                 <li>Ver quién está en tus clases</li>
                 <li>Buscar los amigos de tus amigos</li>
+                <li>Conversar con amigos</li>
+                <li>Hacer publicaciones y ver publicaciones de tus amigos</li>
                 <li>Ver una visualización de tu red social</li>
             </ul>
 
