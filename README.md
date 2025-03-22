@@ -1,4 +1,4 @@
 # Clon Facebook2004
 ## En proceso...
 ![](https://drive.google.com/uc?export=view&id=17w4HKXB0ZhrmD6HBPin3V8vQJ2ITYA04)
-![](https://drive.google.com/uc?export=view&id=1C3HDIPzEyNK7stJ9WfkxLb5sV-Bj1wMZ)
+![](https://drive.google.com/uc?export=view&id=1y4WjJ06aX4msEmZbIS9pqlBqLPG8uDZU)
