@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function AboutPage() {
     return (
-        <div className="flex flex-col border-2 border-blue-800 bg-white w-[800px] h-[360px] p-6">
+        <div className="flex flex-col border-2 border-blue-800 bg-white w-[800px] h-[380px] p-6">
             <h1 className="text-2xl font-bold text-center mb-4">
                 [ Bienvenido a Thefacebook ]
             </h1>
@@ -25,7 +25,7 @@ function AboutPage() {
             </p>
             {/**Botones*/}
             {/* Botón de logeo */}
-            <div className="justify-between">
+            <div className="justify-between p-2">
                 <Link to={"/register"} className={`btn gap-2 h-7 text-lg bg-blue-600  text-white ml-45`}>
                     <span className="hidden sm:inline">Registrarse</span>
                 </Link>

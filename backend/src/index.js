@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
+import friendshipRoutes from './routes/friendship.routes.js';
 
 import { connectDB } from './lib/db.js';
 import cookieParser from "cookie-parser";
@@ -26,6 +27,7 @@ app.use(
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/friendship",friendshipRoutes);
 /*
 // Servir el frontend en producción cuando la aplicación está en un entorno de despliegue (production).
 // En la etapa de desarrollo, en el archivo .env, estaba NODE_ENV=development

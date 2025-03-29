@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage"
 import AjustesPage from "./pages/AjustesPage"
 import AmigosPage from "./pages/AmigosPage"
 import PerfilPage from "./pages/PerfilPage"
+import BuscarPage from "./pages/BuscarPage"
 
 import Navbar from "./components/Navbar"
 import { Route, Routes, Navigate } from "react-router"
@@ -44,7 +45,7 @@ function App() {
           <Route path="/amigos" element={authUser ? <AmigosPage /> : <Navigate to="/login" />} />
           <Route path="/perfil" element={authUser ? <PerfilPage /> : <Navigate to="/login" />} />
           <Route path="/ajustes" element={authUser ? <AjustesPage /> : <Navigate to="/login" />} />
-          <Route path="/buscar" element={<div>BUSCAR</div>} />
+          <Route path="/buscar" element={authUser? <BuscarPage/> : <Navigate to="/login"/>} />
         </Routes>
         <Toaster />
       </div>
