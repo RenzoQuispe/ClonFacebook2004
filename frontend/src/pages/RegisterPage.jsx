@@ -33,7 +33,7 @@ function RegisterPage() {
 
         <div className="border-2 border-blue-800 bg-white w-[800px] h-[360px]">
             {/* Encabezado */}
-            <div className="bg-blue-800 text-white px-4 py-2 font-bold text-2xl">
+            <div style={{backgroundColor: '#3a5898'}} className=" text-white px-4 py-2 font-bold text-2xl">
                 Registrarse
             </div>
             <p className="ml-15 mr-15 py-3  text-sm">
@@ -107,7 +107,7 @@ function RegisterPage() {
                     * Puedes elegir cualquier contraseña. No tiene que ser, ni debería ser, la contraseña de tu escuela.
                 </p>
                 {/* Botón de registro */}
-                <button type="submit" className="bg-blue-600 text-white w-[160px] ml-40 px-1 py-1" disabled={isSigningUp}>
+                <button style={{backgroundColor: '#3a5898'}} type="submit" className="text-white w-[160px] ml-40 px-1 py-1" disabled={isSigningUp}>
                     {isSigningUp ? (
                         <>
                             <Loader2 className="size-5 animate-spin" />
