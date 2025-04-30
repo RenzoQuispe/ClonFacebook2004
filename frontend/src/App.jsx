@@ -35,9 +35,9 @@ function App() {
   return (
     <div>
       <Navbar />
-      <div className="flex-grow flex py-1 justify-center items-center">
+      <div className="flex-grow flex py-1 justify-center">
         <Routes>
-          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
+          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/about" />} />
           <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
           <Route path="/register" element={!authUser ? <RegisterPage /> : <Navigate to="/" />} />
           <Route path="/about" element={<AboutPage />} />
