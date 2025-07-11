@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  # Contenedor backend
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports: 
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - mongo
+  # Contenedor frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports: 
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    restart: unless-stopped
+  # base de datos
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+# persistencia de datos
+volumes:
+  mongo_data:
+  
