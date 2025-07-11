@@ -7,7 +7,7 @@ const server = http.createServer(app); //Se crea un servidor HTTP con http.creat
 //Se instancia un servidor de Socket.IO (io) ligado al servidor HTTP.
 const io = new Server(server, {
   cors: {
-    origin: ["http://localhost:5173"],
+    origin: "*",
   },
 });
 
