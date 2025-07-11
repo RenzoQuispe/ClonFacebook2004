@@ -7,5 +7,10 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+  },
   assetsInclude: ["**/*.PNG"],
 })
