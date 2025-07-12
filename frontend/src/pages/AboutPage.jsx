@@ -6,7 +6,7 @@ function AboutPage() {
             {/*CardLoginRegister y Contenido RegisterPage */}
             <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div className="flex flex-col border-2 border-blue-800 bg-white w-[800px] h-[380px] p-5">
+                <div className="flex flex-col border-2 border-blue-800 bg-white w-[800px] h-[380px] p-5 text-black">
                     <h1 className="text-2xl font-bold text-center mb-3">
                         [ Bienvenido a Thefacebook ]
                     </h1>

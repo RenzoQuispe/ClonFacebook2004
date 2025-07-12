@@ -36,7 +36,7 @@ function BuscarPage() {
     }, [query, tipoBusqueda, buscarAmigoPorUsername, buscarAmigoPorEmail]);
 
     return (
-        <div className="border-2 border-blue-800 w-[1000px] h-[520px] overflow-auto">
+        <div className="border-2 border-blue-800 w-[1000px] h-[520px] overflow-auto text-black">
             <div className="text-2xl bg-blue-800 text-white px-4 py-2 flex items-center">
                 <label htmlFor="tipoBusqueda" className="mr-4">Buscar</label>
                 <select

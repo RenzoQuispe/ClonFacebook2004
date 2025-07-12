@@ -23,7 +23,7 @@ function LoginPage() {
             <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
                 <CardLoginRegister />
                 <div className="items-center border-2 border-blue-800 bg-white w-[800px] h-[380px]">
-                    <h1 className="ml-86 font-bold text-2xl mt-15">[ Login ]</h1>
+                    <h1 className="ml-86 font-bold text-2xl mt-15 text-black">[ Login ]</h1>
                     {/* Cuerpo del formulario */}
                     <form onSubmit={handleSubmit} className="items-center py-4 space-y-4 text-sm text-gray-800 w-[450px] ml-45 mt-5">
                         {/* Campos del formulario */}
@@ -50,9 +50,9 @@ function LoginPage() {
                                     onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="h-5 w-5 text-base-content/40" />
+                                        <EyeOff className="h-5 w-5 text-base-content/40 text-black" />
                                     ) : (
-                                        <Eye className="h-5 w-5 text-base-content/40" />
+                                        <Eye className="h-5 w-5 text-base-content/40 text-black" />
                                     )}
                                 </button>
                             </div>

@@ -83,9 +83,9 @@ function RegisterPage() {
                                     onClick={() => setShowPassword(!showPassword)}
                                 >
                                     {showPassword ? (
-                                        <EyeOff className="size-5 text-base-content/40" />
+                                        <EyeOff className="size-5 text-base-content/40 text-black" />
                                     ) : (
-                                        <Eye className="size-5 text-base-content/40" />
+                                        <Eye className="size-5 text-base-content/40 text-black" />
                                     )}
                                 </button>
                             </div>
@@ -101,7 +101,7 @@ function RegisterPage() {
 
                         {/* Checkbox de términos (NO FUNCIONAL DE MOMENTO) */}
                         <div className="flex items-center mt-3">
-                            <input type="checkbox" className="checkbox checkbox-sm" />
+                            <input type="checkbox" className="checkbox checkbox-sm text-black" />
                             <span className="ml-2">
                                 He leído y comprendido los {" "}
                                 <a href="#" className="text-blue-600">Términos de uso</a>,  y los acepto.

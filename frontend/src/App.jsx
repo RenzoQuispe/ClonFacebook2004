@@ -33,7 +33,7 @@ function App() {
     );
   
   return (
-    <div>
+    <div className="bg-white min-h-screen flex flex-col">
       <Navbar />
       <div className="flex-grow flex py-1 justify-center">
         <Routes>

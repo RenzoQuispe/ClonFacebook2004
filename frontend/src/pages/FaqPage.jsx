@@ -15,7 +15,7 @@ const FaqPage = () => {
             {/*CardLoginRegister y Contenido RegisterPage */}
             <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div style={{ border: '2px solid #405c9c' }} className=" bg-white w-[800px] h-[1050px]">
+                <div style={{ border: '2px solid #405c9c' }} className=" bg-white w-[800px] h-[1050px] text-black">
                     {/* Encabezado */}
                     <div style={{ backgroundColor: '#3a5898' }} className=" text-white px-4 py-2 font-bold text-2xl">
                         Preguntas Frecuentes

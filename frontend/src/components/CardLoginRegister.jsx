@@ -44,9 +44,9 @@ function CardLoginRegister() {
                             onClick={() => setShowPassword(!showPassword)}
                         >
                             {showPassword ? (
-                                <EyeOff className="h-5 w-5 text-base-content/40" />
+                                <EyeOff className="h-5 w-5 text-base-content/40 text-black" />
                             ) : (
-                                <Eye className="h-5 w-5 text-base-content/40" />
+                                <Eye className="h-5 w-5 text-base-content/40 text-black" />
                             )}
                         </button>
                     </div>
