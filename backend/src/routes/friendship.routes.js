@@ -10,7 +10,8 @@ import {
     verSolicitudes, 
     eliminarAmigo, 
     bloquearUser, 
-    perfilAmigo
+    perfilAmigo,
+    obtenerEstadoAmistad
 } from "../controllers/friendship.controllers.js";
 
 const router = express.Router();
@@ -24,5 +25,5 @@ router.get("/buscarAmigoPorEmail", protectRoute,buscarAmigoPorEmail)
 router.get("/buscarAmigoPorUsername", protectRoute,buscarAmigoPorUsername)
 router.post("/bloquearuser",protectRoute,bloquearUser)
 router.post("/perfilamigo/:id",protectRoute,perfilAmigo)
-
+router.get("/estadoAmistad/:user1/:user2", obtenerEstadoAmistad);
 export default router;

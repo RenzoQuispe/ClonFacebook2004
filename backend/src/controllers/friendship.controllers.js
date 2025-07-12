@@ -166,6 +166,24 @@ export const bloquearUser = async (req, res) => {
         res.status(500).json({ message: "Error al bloquear usuario", error });
     }
 }
+export const obtenerEstadoAmistad = async (req, res) => {
+    try {
+      const { user1, user2 } = req.params;
+  
+      const amistad = await Friendship.findOne({
+        $or: [
+          { user1, user2 },
+          { user1: user2, user2: user1 }
+        ]
+      });
+  
+      if (!amistad) return res.json({ status: null });
+  
+      return res.json({ status: amistad.status, friendshipId: amistad._id });
+    } catch (error) {
+      res.status(500).json({ message: "Error al obtener estado de amistad", error });
+    }
+}
 export const perfilAmigo = async (req, res) => {
     try {
         const userId = req.user._id;
