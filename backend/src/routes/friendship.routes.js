@@ -16,7 +16,7 @@ import {
 
 const router = express.Router();
 router.get("/listaamigos", protectRoute, verAmigos);
-router.post("/agregaramigo", protectRoute, agregarAmigo);
+router.post("/agregarAmigo", protectRoute, agregarAmigo);
 router.put("/aceptarsolicitud", protectRoute,aceptarSolicitud)
 router.delete("/eliminarsolicitud", protectRoute,eliminarSolicitud)
 router.get("/versolicitudes", protectRoute,verSolicitudes)
@@ -25,5 +25,5 @@ router.get("/buscarAmigoPorEmail", protectRoute,buscarAmigoPorEmail)
 router.get("/buscarAmigoPorUsername", protectRoute,buscarAmigoPorUsername)
 router.post("/bloquearuser",protectRoute,bloquearUser)
 router.post("/perfilamigo/:id",protectRoute,perfilAmigo)
-router.get("/estadoAmistad/:user1/:user2", obtenerEstadoAmistad);
+router.get("/estadoAmistad/:user1/:user2", protectRoute,obtenerEstadoAmistad);
 export default router;

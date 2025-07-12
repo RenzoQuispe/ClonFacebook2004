@@ -27,6 +27,7 @@ export const verAmigos = async (req, res) => {
 }
 export const buscarAmigoPorUsername = async (req, res) => {
     try {
+        console.log("buscarAmigoPorUsername")
         const { username } = req.query;
         console.log(username);
         if (!username) {
