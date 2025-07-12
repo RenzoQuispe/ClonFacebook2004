@@ -7,8 +7,13 @@ import AjustesPage from "./pages/AjustesPage"
 import AmigosPage from "./pages/AmigosPage"
 import PerfilPage from "./pages/PerfilPage"
 import BuscarPage from "./pages/BuscarPage"
-
+import GruposPage from "./pages/GruposPage"
+import SolicitudesPage from "./pages/SolicitudesPage"
+import ChatPage from "./pages/ChatPage"
 import Navbar from "./components/Navbar"
+import CuentaPage from "./pages/CuentaPage"
+import PrivacidadPage from "./pages/PrivacidadPage"
+import FotosVideosPage from "./pages/FotosVideosPages"
 import { Route, Routes, Navigate } from "react-router"
 import { estadoAuth } from "./estados/estadoAuth";
 import { useEffect } from "react";
@@ -46,6 +51,12 @@ function App() {
           <Route path="/perfil" element={authUser ? <PerfilPage /> : <Navigate to="/login" />} />
           <Route path="/ajustes" element={authUser ? <AjustesPage /> : <Navigate to="/login" />} />
           <Route path="/buscar" element={authUser? <BuscarPage/> : <Navigate to="/login"/>} />
+          <Route path="/grupos" element={authUser? <GruposPage/> : <Navigate to="/login"/>} />
+          <Route path="/solicitudes" element={authUser? <SolicitudesPage/> : <Navigate to="/login"/>} />
+          <Route path="/chat" element={authUser? <ChatPage/> : <Navigate to="/login"/>} />
+          <Route path="/cuenta" element={authUser? <CuentaPage/> : <Navigate to="/login"/>} />
+          <Route path="/privacidad" element={authUser? <PrivacidadPage/> : <Navigate to="/login"/>} />
+          <Route path="/fotosvideos" element={authUser? <FotosVideosPage/> : <Navigate to="/login"/>} />
         </Routes>
         <Toaster />
       </div>
