@@ -2,12 +2,22 @@ import { create } from "zustand";
 import { axiosInstance } from "../lib/axios.js";
 import { toast } from "react-hot-toast"
 
+const ESTADOS_AMISTAD = {
+    NONE: "none",
+    PENDING: "pending",
+    CONFIRMED: "confirmed",
+    BLOCKED: "blocked"
+};
+
 export const estadoFriendship = create((set, get) => (
     {
         amigos: [],
         amigosEncontrados: [],  // Para almacenar los resultados de búsqueda
         isAmigosLoading: false,
         isSearchingFriend: false,
+        estados: {}, // mapa: "userId-otroId": estado
+        friendshipIds: {},
+
         getAmigos: async () => {
             set({ isAmigosLoading: true });
             try {
@@ -62,6 +72,23 @@ export const estadoFriendship = create((set, get) => (
             } catch (error) {
                 toast.error(error.response?.data?.message || "Error al buscar amigos por email");
                 set({ isSearchingFriend: false });
+            }
+        },
+        estadoAmistad: async (id1, id2) => {
+            const key = [id1, id2].sort().join("-");
+            try {
+                const res = await axios.get(`/estadoAmistad/${id1}/${id2}`);
+                const { status, friendshipId } = res.data;
+
+                set((state) => ({
+                    estados: { ...state.estados, [key]: status || "none" },
+                    friendshipIds: { ...state.friendshipIds, [key]: friendshipId || null }
+                }));
+
+                return status || "none";
+            } catch (err) {
+                console.error("Error al consultar estado de amistad", err);
+                return "none";
             }
         }
 
