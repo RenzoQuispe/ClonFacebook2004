@@ -12,7 +12,7 @@ const Navbar = () => {
                         <Link to="/buscar" className="hover:underline ml-130 mt-17">Buscar</Link>
                         <Link to="/" className="hover:underline mt-17">Home</Link>
                         <Link to="/perfil" className="hover:underline mt-17">Perfil</Link>
-                        <Link to="/amigos" className="hover:underline mt-17">Amigos</Link>
+                        <Link to="/amigos" className="hover:underline mt-17">Social</Link>
                         <Link to="/ajustes" className="hover:underline mt-17">Ajustes</Link>
                         <Link onClick={logout} className="hover:underline mt-17">Logout</Link>
                     </nav>
