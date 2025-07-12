@@ -1,6 +1,6 @@
 import { estadoFriendship } from "../estados/estadoFriendship";
 import { useEffect } from "react";
-import Social from "../components/Social";
+import CardSocial from "../components/CardSocial";
 function AmigosPage() {
     const { getAmigos, amigos } = estadoFriendship();
 
@@ -12,7 +12,7 @@ function AmigosPage() {
 
     return (
         <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
-            <Social />
+            <CardSocial />
             <div style={{ border: '2px solid #3a5898' }} className=" bg-white w-[890px] h-[500px]">
                 {/* Encabezado */}
                 <div style={{ background: '#3a5898' }} className=" text-white px-4 py-2 text-2xl">Amigos</div>
