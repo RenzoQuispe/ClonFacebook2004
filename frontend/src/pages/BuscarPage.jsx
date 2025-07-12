@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { estadoFriendship } from "../estados/estadoFriendship";
 import CardBuscar from "../components/CardBuscar";
-import { UserPlus } from "lucide-react"
+import { estadoAuth } from "../estados/estadoAuth";
+import SubBotonAmistad from "../components/SubBotonAmistad";
 function BuscarPage() {
     const {
         buscarAmigoPorUsername,
@@ -9,6 +10,10 @@ function BuscarPage() {
         amigosEncontrados,
         isSearchingFriend
     } = estadoFriendship();
+
+    const {
+        authUser,
+    } = estadoAuth()
 
     const [tipoBusqueda, setTipoBusqueda] = useState("Username");
     const [query, setQuery] = useState("");
@@ -102,17 +107,7 @@ function BuscarPage() {
                                     </div>
 
                                     {/* Subbotón separado al final */}
-                                    <button
-                                        onClick={(e) => {
-                                            e.stopPropagation(); // evita que se dispare el click del contenedor
-                                            console.log(`Agregar a ${amigo.username}`);
-                                        }}
-                                        className="flex items-center space-x-1 me-5 bg-blue-800 px-2 py-1 rounded-sm hover:bg-blue-500 transition-colors"
-                                        title="Agregar amigo"
-                                    >
-                                        <UserPlus className="w-5 h-5 text-white" />
-                                        <span className="text-white text-sm">Añadir</span>
-                                    </button>
+                                    <SubBotonAmistad authId={authUser._id} amigoId={amigo._id} />
                                 </div>
                             ))}
                         </div>
