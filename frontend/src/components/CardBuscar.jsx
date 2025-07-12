@@ -2,7 +2,8 @@ import { Link } from "react-router";
 const Estilo = {
     fontFamily: '"Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana, sans-serif',
 };
-const Social = () => {
+function CardBuscar(){
+
     return (
         <div className="w-[200px] text-black">
             {/*Busqueda rapida */}
@@ -28,8 +29,8 @@ const Social = () => {
                 padding: '20px'
             }} className="flex flex-col h-55 mt-3  ">
                 <Link to='/perfil' className="text-blue-800">Mi Perfil[editar]</Link>
-                <Link className="text-blue-800">Mis Amigos</Link>
-                <Link className="text-blue-800">Mis Grupos</Link>
+                <Link to='/amigos' className="text-blue-800">Mis Amigos</Link>
+                <Link to='/grupos' className="text-blue-800">Mis Grupos</Link>
                 <Link className="text-blue-800">Mensajes</Link>
                 <Link className="text-blue-800">Solicitudes</Link>
                 <Link to='/ajustes' className="text-blue-800">Mi Cuenta</Link>
@@ -38,4 +39,4 @@ const Social = () => {
         </div>
     )
 }
-export default Social;
+export default CardBuscar;
