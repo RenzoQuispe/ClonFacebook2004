@@ -115,7 +115,7 @@ export const verSolicitudes = async (req, res) => {
         const solicitudes = await Friendship.find({
             user2: userId, // Usuario que recibe la solicitud
             status: "pending"
-        }).populate("user1", "name email"); // Obtener solo name y email del remitente
+        }).populate("user1", "username email fotoPerfil"); // Obtener solo username y email del remitente
 
         if (!solicitudes.length) {
             return res.status(404).json({ message: "No tienes solicitudes pendientes" });
@@ -125,8 +125,9 @@ export const verSolicitudes = async (req, res) => {
         const listaSolicitudes = solicitudes.map(solicitud => ({
             _id: solicitud._id,
             userId: solicitud.user1._id,
-            name: solicitud.user1.name,
-            email: solicitud.user1.email
+            username: solicitud.user1.username,
+            email: solicitud.user1.email,
+            fotoPerfil: solicitud.user1.fotoPerfil
         }));
 
         res.json({ solicitudes: listaSolicitudes });

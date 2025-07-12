@@ -31,8 +31,8 @@ function CardBuscar(){
                 <Link to='/perfil' className="text-blue-800">Mi Perfil[editar]</Link>
                 <Link to='/amigos' className="text-blue-800">Mis Amigos</Link>
                 <Link to='/grupos' className="text-blue-800">Mis Grupos</Link>
-                <Link className="text-blue-800">Mensajes</Link>
-                <Link className="text-blue-800">Solicitudes</Link>
+                <Link to='/chat' className="text-blue-800">Mensajes</Link>
+                <Link to='/solicitudes' className="text-blue-800">Solicitudes</Link>
                 <Link to='/ajustes' className="text-blue-800">Mi Cuenta</Link>
                 <Link className="text-blue-800">Mi Privacidad</Link>
             </div>
