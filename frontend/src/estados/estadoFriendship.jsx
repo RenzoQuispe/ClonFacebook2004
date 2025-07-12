@@ -56,7 +56,6 @@ export const estadoFriendship = create((set, get) => (
                 set({ isSearchingFriend: false });
             }
         },
-
         buscarAmigoPorEmail: async (email) => {
             if (!email) return toast.error("El campo de búsqueda está vacío");
 
@@ -77,7 +76,8 @@ export const estadoFriendship = create((set, get) => (
         estadoAmistad: async (id1, id2) => {
             const key = [id1, id2].sort().join("-");
             try {
-                const res = await axios.get(`/estadoAmistad/${id1}/${id2}`);
+                const res = await axiosInstance.get(`/friendship/estadoAmistad/${id1}/${id2}`);
+                
                 const { status, friendshipId } = res.data;
 
                 set((state) => ({
@@ -89,6 +89,24 @@ export const estadoFriendship = create((set, get) => (
             } catch (err) {
                 console.error("Error al consultar estado de amistad", err);
                 return "none";
+            }
+        },
+        enviarSolicitudAmistad: async (user1, user2) => {
+            const key = [user1, user2].sort().join("-");
+            try {
+                const res = await axiosInstance.post("/friendship/agregarAmigo", {
+                    user1,
+                    user2,
+                });
+
+                set((state) => ({
+                    estados: { ...state.estados, [key]: "pending" }
+                }));
+
+                return { ok: true, message: res.data.message };
+            } catch (err) {
+                console.error("Error al enviar solicitud:", err.response?.data || err.message);
+                return { ok: false, message: err.response?.data?.message || "Error desconocido" };
             }
         }
 

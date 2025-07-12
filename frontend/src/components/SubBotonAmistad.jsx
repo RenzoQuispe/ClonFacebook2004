@@ -1,21 +1,28 @@
 import { estadoFriendship } from "../estados/estadoFriendship";
 import { UserPlus, Ban, Check, Mail } from "lucide-react";
 import { useEffect } from "react";
+import toast from "react-hot-toast";
 const SubBotonAmistad = ({ authId, amigoId }) => {
     const key = [authId, amigoId].sort().join("-");
-    const { estados, estadoAmistad, friendshipIds } = estadoFriendship();
+    const { estados, estadoAmistad, friendshipIds, enviarSolicitudAmistad } = estadoFriendship();
     const estado = estados[key] || "none";
 
     useEffect(() => {
         estadoAmistad(authId, amigoId);
     }, [authId, amigoId]);
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         e.stopPropagation();
 
         switch (estado) {
             case "none":
                 console.log("Enviar solicitud");
+                const res = await enviarSolicitudAmistad(authId, amigoId);
+                if (res.ok) {
+                    toast.success("Solicitud enviada"); // si usas react-hot-toast o similar
+                } else {
+                    toast.error(res.message);
+                }
                 break;
             case "pending":
                 console.log("Solicitud ya enviada");
