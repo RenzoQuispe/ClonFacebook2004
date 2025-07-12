@@ -77,7 +77,7 @@ export const estadoFriendship = create((set, get) => (
             const key = [id1, id2].sort().join("-");
             try {
                 const res = await axiosInstance.get(`/friendship/estadoAmistad/${id1}/${id2}`);
-                
+
                 const { status, friendshipId } = res.data;
 
                 set((state) => ({
@@ -108,8 +108,23 @@ export const estadoFriendship = create((set, get) => (
                 console.error("Error al enviar solicitud:", err.response?.data || err.message);
                 return { ok: false, message: err.response?.data?.message || "Error desconocido" };
             }
-        }
+        },
+        solicitudesRecibidas: [],
+        listarSolicitudes: async () => {
+            try {
+                const res = await axiosInstance.get("/friendship/versolicitudes");
 
+                if (Array.isArray(res.data.solicitudes)) {
+                    set({ solicitudesRecibidas: res.data.solicitudes });
+                } else {
+                    set({ solicitudesRecibidas: [] });
+                }
+            } catch (err) {
+                toast.error("Error al listar solicitudes");
+                console.error(err);
+                set({ solicitudesRecibidas: [] });
+            }
+        },
     }
 )
 );
