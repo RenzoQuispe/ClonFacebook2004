@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { estadoFriendship } from "../estados/estadoFriendship";
 import CardBuscar from "../components/CardBuscar";
+import { UserPlus } from "lucide-react"
 function BuscarPage() {
     const {
         buscarAmigoPorUsername,
@@ -37,7 +38,7 @@ function BuscarPage() {
 
     return (
         <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
-            <CardBuscar/>
+            <CardBuscar />
             {/* Contenido */}
             <div style={{ border: '2px solid #3a5898' }} className=" w-[890px] h-[520px] overflow-auto text-black">
                 <div style={{ background: '#3a5898' }} className="text-2xl text-white px-4 py-2 flex items-center">
@@ -84,23 +85,38 @@ function BuscarPage() {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full px-5 py-3">
                             {amigosEncontrados.map((amigo) => (
-                                <button
+                                <div
                                     key={amigo._id}
                                     className="flex w-[400px] items-center gap-4 p-1 bg-white rounded-lg shadow-md hover:shadow-lg transition-all transform hover:scale-105"
+                                    onClick={() => console.log(`Ver perfil de ${amigo.username}`)}
                                 >
                                     <img
                                         src={amigo.fotoPerfil || "/src/imagenes/defaultFoto.jpg"}
                                         alt={`Foto de perfil de ${amigo.username}`}
                                         className="w-20 h-20"
-                                        onError={(e) => e.target.src = "/src/imagenes/defaultFoto.jpg"}
+                                        onError={(e) => (e.target.src = "/src/imagenes/defaultFoto.jpg")}
                                     />
-                                    <div>
+                                    <div className="flex-1">
                                         <p className="text-lg font-semibold">{amigo.username}</p>
                                         <p className="text-gray-500">{amigo.email}</p>
                                     </div>
-                                </button>
+
+                                    {/* Subbotón separado al final */}
+                                    <button
+                                        onClick={(e) => {
+                                            e.stopPropagation(); // evita que se dispare el click del contenedor
+                                            console.log(`Agregar a ${amigo.username}`);
+                                        }}
+                                        className="flex items-center space-x-1 me-5 bg-blue-800 px-2 py-1 rounded-sm hover:bg-blue-500 transition-colors"
+                                        title="Agregar amigo"
+                                    >
+                                        <UserPlus className="w-5 h-5 text-white" />
+                                        <span className="text-white text-sm">Añadir</span>
+                                    </button>
+                                </div>
                             ))}
                         </div>
+
                     )}
                 </div>
             </div>
