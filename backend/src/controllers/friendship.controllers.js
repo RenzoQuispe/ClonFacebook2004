@@ -11,7 +11,7 @@ export const verAmigos = async (req, res) => {
         }).populate("user1 user2", "username email fotoPerfil"); // Solo traer name y email
 
         if (!friendships.length) {
-            return res.status(404).json({ message: "No tienes amigos agregados" });
+            return res.status(200).json({ message: "No tienes amigos agregados" });
         }
 
         // Formatear la lista de amigos para devolver solo los datos necesarios
@@ -117,7 +117,7 @@ export const verSolicitudes = async (req, res) => {
         }).populate("user1", "username email fotoPerfil"); // Obtener solo username y email del remitente
 
         if (!solicitudes.length) {
-            return res.status(404).json({ message: "No tienes solicitudes pendientes" });
+            return res.status(200).json({ message: "No tienes solicitudes pendientes" });
         }
 
         // Formatear la respuesta con solo los datos necesarios
