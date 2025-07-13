@@ -80,8 +80,7 @@ export const agregarAmigo = async (req, res) => { //Enviar solicitud de amistad
 }
 export const aceptarSolicitud = async (req, res) => {
     try {
-        //const friendshipId = req.solicitudes._id;
-        const { friendshipId } = req.body;
+        const { friendshipId } = req.body.params;
         console.log(req.body);
         const friendship = await Friendship.findByIdAndUpdate(
             friendshipId,
@@ -98,8 +97,8 @@ export const aceptarSolicitud = async (req, res) => {
 }
 export const eliminarSolicitud = async (req, res) => {
     try {
-        //const friendshipId = req.friendship._id;
-        const { friendshipId } = req.body;
+        console.log(req.query)
+        const { friendshipId } = req.query;
         const deleted = await Friendship.findByIdAndDelete(friendshipId);
         if (!deleted) return res.status(404).json({ message: "Solicitud no encontrada" });
         res.json({ message: "Solicitud eliminada" });
