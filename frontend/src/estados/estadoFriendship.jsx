@@ -125,6 +125,30 @@ export const estadoFriendship = create((set, get) => (
                 set({ solicitudesRecibidas: [] });
             }
         },
+        aceptarSolicitud: async (friendshipId) => {
+            try {
+                console.log("aceptarSolicitud-Estado:", friendshipId)
+                const res = await axiosInstance.put("/friendship/aceptarsolicitud", {
+                    params: { friendshipId }
+                });
+                return { ok: true, message: res.data.message };
+            } catch (err) {
+                console.error("Error al aceptar solicitud:", err.response?.data || err.message);
+                return { ok: false, message: err.response?.data?.message || "Error desconocido" };
+            }
+        },
+        eliminarSolicitud: async (friendshipId) => {
+            try {
+                console.log("eliminarSolicitud-Estado:", friendshipId)
+                const res = await axiosInstance.delete("/friendship/eliminarsolicitud", {
+                    params: { friendshipId }
+                });
+                return { ok: true, message: res.data.message };
+            } catch (err) {
+                console.error("Estado-Error al eliminar solicitud:", err.response?.data || err.message);
+                return { ok: false, message: err.response?.data?.message || "Error desconocido" };
+            }
+        }
     }
 )
 );
