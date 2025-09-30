@@ -10,7 +10,6 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 dotenv.config();
-const PORT = process.env.PORT;
 
 const app = express();
 app.use(express.json({ limit: '50mb' })); //Aumenta el límite del body a 50MB
@@ -40,7 +39,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/friendship",friendshipRoutes);
 
-app.listen(PORT, () => {
-    console.log("Server ejecutandose en el puerto:" + PORT);
+app.listen(process.env.NODE_PORT, () => {
+    console.log("Server ejecutandose en el puerto:" + process.env.NODE_PORT);
     connectDB();
 });
