@@ -4,12 +4,12 @@ const Navbar = () => {
     const {logout, authUser} = estadoAuth(); // Las opciones mostradas por el Navbar dependen de si hay un susario autentificado o no
         
     return (
-        <header className="top-0 w-[1100px] h-25 mx-auto bg-cover bg-center" style={{ backgroundImage: "url('/src/imagenes/navbar.PNG')" }}>
+        <header className="top-0 w-[1200px] h-25 mx-auto bg-cover bg-center" style={{ backgroundImage: "url('/src/imagenes/navbar.PNG')", fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }}>
             <div className="relative z-10 flex items-center justify-between px-6 h-full">
                 {/* Si el usuario está autenticado, mostrar opciones de usuario */}
                 {authUser ? (
                     <nav className="flex gap-5 text-white text-2xl">
-                        <Link to="/buscar" className="hover:underline ml-130 mt-17">Buscar</Link>
+                        <Link to="/buscar" className="hover:underline ml-147 mt-17">Buscar</Link>
                         <Link to="/" className="hover:underline mt-17">Home</Link>
                         <Link to="/perfil" className="hover:underline mt-17">Perfil</Link>
                         <Link to="/amigos" className="hover:underline mt-17">Social</Link>

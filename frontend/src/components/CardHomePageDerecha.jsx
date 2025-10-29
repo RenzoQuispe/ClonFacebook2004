@@ -6,21 +6,21 @@ const Estilo = {
 
 function CardHomeDerecha() {
     return (
-        <div style={{...Estilo}} className="bg-gray-100 w-[200px] text-black">
+        <div style={{...Estilo, }} className="bg-gray-100 w-[245px] text-black">
             <div>
-                <h1 className="bg-gray-200 font-bold">Solicitudes</h1>
+                <h1 className="bg-gray-200 text-blue-800 p-1">Solicitudes</h1>
             </div>
             <div>
-                <h1 className="bg-gray-200 font-bold mt-3">Mensajes</h1>
+                <h1 className="bg-gray-200 text-blue-800 mt-3 p-1">Mensajes</h1>
             </div>
             <div>
-                <h1 className="bg-gray-200 font-bold mt-3">Mi estado</h1>
+                <h1 className="bg-gray-200 text-blue-800 mt-3 p-1">Mi estado</h1>
             </div>
             <div>
-                <h1 className="bg-gray-200 font-bold mt-3">Proximos eventos</h1>
+                <h1 className="bg-gray-200 text-blue-800 mt-3 p-1">Proximos eventos</h1>
             </div>
             <div>
-                <h1 className="bg-gray-200 font-bold mt-3">Amigos Conectados</h1>
+                <h1 className="bg-gray-200 text-blue-800 mt-3 p-1">Amigos Conectados</h1>
             </div>
         </div>
     )

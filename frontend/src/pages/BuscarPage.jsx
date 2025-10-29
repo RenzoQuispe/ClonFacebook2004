@@ -45,8 +45,8 @@ function BuscarPage() {
         <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
             <CardBuscar />
             {/* Contenido */}
-            <div style={{ border: '2px solid #3a5898' }} className=" w-[890px] h-[520px] overflow-auto text-black">
-                <div style={{ background: '#3a5898' }} className="text-2xl text-white px-4 py-2 flex items-center">
+            <div style={{ border: '2px solid #3b5998', fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }} className=" w-[990px] h-[650px] overflow-auto text-black">
+                <div style={{ background: '#3b5998' }} className="text-2xl text-white px-4 py-2 flex items-center">
                     <label htmlFor="tipoBusqueda" className="mr-4">Buscar</label>
                     <select
                         id="tipoBusqueda"

@@ -25,7 +25,7 @@ function PerfilPage() {
         <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
             <CardPerfil />
             {/*Perfil Contenido */}
-            <div style={{ border: '2px solid #3b5998', fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }} className=" bg-white w-[890px] h-[1460px]">
+            <div style={{ border: '2px solid #3b5998', fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }} className=" bg-white w-[990px] h-[1460px]">
                 {/* Encabezado */}
                 <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">{authUser?.username || "Cargando..."} </div>
                 {/* Contenido Perfil */}
@@ -33,7 +33,7 @@ function PerfilPage() {
                     {/* Contenido en la izquierda*/}
                     <div>
                         {/* Foto de perfil */}
-                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[300px] h-[350px] ml-4">
+                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[350px] h-[350px] ml-4">
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl justify-between h-[40px]">
                                 <div className="relative">
                                     <label
@@ -46,7 +46,7 @@ function PerfilPage() {
                                             duration-200 
                                             text-lg
                                             h-[30px]
-                                            ml-53
+                                            ml-65
                                             ${isUpdatingProfile ? "animate-pulse pointer-events-none" : ""}
                                         `}
                                     >
@@ -66,20 +66,20 @@ function PerfilPage() {
                                 <img
                                     src={selectedImg || authUser.fotoPerfil || "/src/imagenes/defaultFoto.jpg"}
                                     alt=""
-                                    className="size-70 object-cover border-1 ml-2 mt-2"
+                                    className="size-70 object-cover border-1 ml-8 mt-2"
                                 />
                             </div>
                         </div>
                         {/* Fotos */}
-                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[300px] h-[250px] ml-4 mt-4">
+                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[350px] h-[250px] ml-4 mt-4">
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">Fotos</div>
                         </div>
                         {/* Amigos en mi red*/}
-                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[300px] h-[250px] ml-4 mt-4">
+                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[350px] h-[250px] ml-4 mt-4">
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">Amigos en mi red</div>
                         </div>
                         {/* Amigos en otras redes*/}
-                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[300px] h-[250px] ml-4 mt-4">
+                        <div style={{ border: '2px solid #3b5998' }} className=" bg-white w-[350px] h-[250px] ml-4 mt-4">
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">Amigos en otras redes</div>
                         </div>
 
@@ -88,22 +88,17 @@ function PerfilPage() {
                     {/* Contenido en la derecha */}
                     <div>
                         {/* Informacion */}
-                        <div style={{ border: '2px solid #3b5998' }} className=" w-[535px] h-[615px]" >
+                        <div style={{ border: '2px solid #3b5998' }} className=" w-[585px] h-[615px]" >
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">Sobre mí</div>
                         </div>
                         {/* Mini - muro */}
-                        <div style={{ border: '2px solid #3b5998' }} className=" w-[535px] h-[750px] mt-4" >
+                        <div style={{ border: '2px solid #3b5998' }} className=" w-[585px] h-[750px] mt-4" >
                             <div style={{ background: '#3b5998' }} className=" text-white px-4 py-1 text-2xl">Mini - Feed</div>
                         </div>
                     </div>
                 </div>
-
-
-
-
             </div>
         </div>
-
     )
 }
 export default PerfilPage;
