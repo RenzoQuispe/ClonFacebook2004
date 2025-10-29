@@ -1,4 +1,8 @@
-# Clon Facebook2004
+# Facebook-Retro
+
+A modern web application recreating the look and feel of Facebook from 2004–2005, built with current technologies and design practices.
+
+*Work in progress…*
 
 ## Inicio rápido con Docker
 
@@ -35,10 +39,3 @@ docker compose up --build
 ```
 
 Accede a la aplicación web desde cualquier dispositivo en tu red local usando: `http://HOST_IP:5173` (En el ejemplo: `http://192.168.1.16:5173`)
-
-## En proceso...
-
-<img src="https://drive.google.com/uc?export=view&id=1W9g8tKGIjjavNfZ8MdWybML181ju_n7B" width="500" /> 
-<img src="https://drive.google.com/uc?export=view&id=1rcrVDPiwnTdc0vYI1P1MZNt0yiAyobwf" width="500" /> 
-<img src="https://drive.google.com/uc?export=view&id=1HwgFOyjrCsJdc0dB5eLw7y-EeiR5EtjU" width="500" /> 
-<img src="https://drive.google.com/uc?export=view&id=1sKLzmIc19XJ5rCwGhFYNFCYIPHyzBAE9" width="500" />
