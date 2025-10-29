@@ -2,11 +2,11 @@ import { Link } from "react-router";
 import CardLoginRegister from "../components/CardLoginRegister";
 function AboutPage() {
     return (
-        <div style={{ border: '2px solid #3a5898' }} className="w-[1100px] h-[500px]">
+        <div style={{ border: '2px solid #3b5998' }} className="w-[1195px] h-[500px]">
             {/*CardLoginRegister y Contenido RegisterPage */}
-            <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
+            <div className="w-[1195px] flex-grow flex py-2 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div className="flex flex-col border-2 border-blue-800 bg-white w-[800px] h-[380px] p-5 text-black">
+                <div className="flex flex-col border-2 border-blue-800 bg-white w-[885px] h-[380px] p-5 text-black">
                     <h1 className="text-2xl font-bold text-center mb-3">
                         [ Bienvenido a Thefacebook ]
                     </h1>

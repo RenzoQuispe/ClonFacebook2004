@@ -18,14 +18,14 @@ function LoginPage() {
     };
 
     return (
-        <div style={{ border: '2px solid #3a5898' }} className="w-[1100px] h-[500px]">
+        <div style={{ border: '2px solid #3b5998', fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }} className="w-[1195px] h-[500px]">
             {/*CardLoginRegister y Contenido RegisterPage */}
-            <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
+            <div className="w-[1195px] flex-grow flex py-2 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div className="items-center border-2 border-blue-800 bg-white w-[800px] h-[380px]">
-                    <h1 className="ml-86 font-bold text-2xl mt-15 text-black">[ Login ]</h1>
+                <div className="items-center justify-center border-2 border-blue-800 bg-white w-[885px] h-[380px]">
+                    <h1 className="ml-96 font-bold text-2xl mt-15 text-black">[ Login ]</h1>
                     {/* Cuerpo del formulario */}
-                    <form onSubmit={handleSubmit} className="items-center py-4 space-y-4 text-sm text-gray-800 w-[450px] ml-45 mt-5">
+                    <form onSubmit={handleSubmit} className="items-center py-4 space-y-4 text-sm text-gray-800 w-[450px] ml-55 mt-5">
                         {/* Campos del formulario */}
                         <div className="form-control flex justify-between items-center">
                             <label className="block ">Email:</label>
@@ -58,7 +58,7 @@ function LoginPage() {
                             </div>
                         </div>
                         {/* Botón de logeo */}
-                        <button style={{ backgroundColor: '#3a5898' }} type="submit" className=" text-white w-[160px] ml-40 px-1 py-1" disabled={isLoggingIn}>
+                        <button style={{ backgroundColor: '#3b5998' }} type="submit" className=" text-white w-[160px] ml-40 px-1 py-1" disabled={isLoggingIn}>
                             {isLoggingIn ? (
                                 <>
                                     <Loader2 className="h-5 w-5 animate-spin" />

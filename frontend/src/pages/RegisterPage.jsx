@@ -32,21 +32,21 @@ function RegisterPage() {
 
 
     return (
-        <div style={{ border: '2px solid #3a5898' }} className="w-[1100px] h-[500px]">
+        <div style={{ border: '2px solid #3b5998', fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }} className="w-[1195px] h-[500px]">
             {/*CardLoginRegister y Contenido RegisterPage */}
-            <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
+            <div className="w-[1195px] flex-grow flex py-2 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div style={{ border: '2px solid #3a5898' }} className="bg-white w-[800px] h-[380px]">
+                <div style={{ border: '2px solid #3b5998' }} className="bg-white w-[885px] h-[380px]">
                     {/* Encabezado */}
-                    <div style={{ backgroundColor: '#3a5898' }} className=" text-white px-4 py-2 font-bold text-2xl">
+                    <div style={{ backgroundColor: '#3b5998' }} className=" text-white px-4 py-2 font-bold text-2xl">
                         Registrarse
                     </div>
-                    <p className="ml-15 mr-15 py-3  text-sm">
+                    <p className="ml-25 mr-15 py-3  text-sm">
                         Para registrarte en thefacebook, simplemente completa los cuatro campos a continuación.
                         Podrás ingresar información adicional y subir una foto de perfil una vez registrado.
                     </p>
                     {/* Cuerpo del formulario */}
-                    <form onSubmit={handleSubmit} className="space-y-2 text-sm text-gray-800 w-[450px] ml-45">
+                    <form onSubmit={handleSubmit} className="space-y-2 text-sm text-gray-800 w-[450px] ml-55">
                         {/* username */}
                         <div className="form-control flex justify-between items-center">
                             <label className="block">Nombre:</label>
@@ -112,7 +112,7 @@ function RegisterPage() {
                             * Puedes elegir cualquier contraseña. No tiene que ser, ni debería ser, la contraseña de tu escuela.
                         </p>
                         {/* Botón de registro */}
-                        <button style={{ backgroundColor: '#3a5898' }} type="submit" className="text-white w-[160px] ml-40 px-1 py-1 mt-3" disabled={isSigningUp}>
+                        <button style={{ backgroundColor: '#3b5998' }} type="submit" className="text-white w-[160px] ml-40 px-1 py-1 mt-3" disabled={isSigningUp}>
                             {isSigningUp ? (
                                 <>
                                     <Loader2 className="size-5 animate-spin" />

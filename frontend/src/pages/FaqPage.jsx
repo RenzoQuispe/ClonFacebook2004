@@ -11,20 +11,20 @@ const FaqPage = () => {
     };
 
     return (
-        <div style={{ border: '2px solid #3a5898' }} className="w-[1100px] h-[1150px]">
+        <div style={{ border: '2px solid #3b5998' }} className="w-[1195px] h-[1150px]">
             {/*CardLoginRegister y Contenido RegisterPage */}
-            <div className="w-[1100px] flex-grow flex py-1 space-x-2 justify-center">
+            <div className="w-[1195px] flex-grow flex py-2 space-x-2 justify-center">
                 <CardLoginRegister />
-                <div style={{ border: '2px solid #405c9c' }} className=" bg-white w-[800px] h-[1050px] text-black">
+                <div style={{ border: '2px solid #405c9c' }} className=" bg-white w-[880px] h-[1050px] text-black">
                     {/* Encabezado */}
-                    <div style={{ backgroundColor: '#3a5898' }} className=" text-white px-4 py-2 font-bold text-2xl">
+                    <div style={{ backgroundColor: '#3b5998' }} className=" text-white px-4 py-2 font-bold text-2xl">
                         Preguntas Frecuentes
                     </div>
                     <h1 className="text-2xl font-bold text-center mb-4 mt-5">
                         [ FAQ ]
                     </h1>
                     {/* Preguntas */}
-                    <div className=" flex flex-col items-center justify-center w-[800px] h-[900px]">
+                    <div className=" flex flex-col items-center justify-center w-[890px] h-[900px]">
 
                         <div style={{ border: '2px solid #405c9c' }} className="text-clickable w-[600px]" onClick={() => toggleContent(1)}>
                             <p style={{ backgroundColor: '#405c9c' }} className=" text-white font-bold cursor-pointer text-center">¿Qué es Thefacebook?</p>
