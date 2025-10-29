@@ -29,15 +29,15 @@ function CardHomeIzquierda() {
                 border: '2px dashed #3a5898',
                 padding: '20px'
             }} className="flex flex-col h-65 mt-3  ">
-                <Link to='/perfil' className="text-blue-800">Mi Perfil</Link>
-                <Link to='/amigos' className="text-blue-800">Mis Amigos</Link>
-                <Link className="text-blue-800">Fotos y Videos</Link>
-                <Link className="text-blue-800">Notas</Link>
-                <Link className="text-blue-800">Grupos</Link>
-                <Link className="text-blue-800">Eventos</Link>
-                <Link to='/chat' className="text-blue-800">Mensajes</Link>
-                <Link to='/ajustes' className="text-blue-800">Cuenta</Link>
-                <Link className="text-blue-800">Privacidad</Link>
+                <Link to='/perfil' className="text-blue-800 hover:underline">Mi Perfil</Link>
+                <Link to='/amigos' className="text-blue-800 hover:underline">Mis Amigos</Link>
+                <Link className="text-blue-800 hover:underline">Fotos y Videos</Link>
+                <Link className="text-blue-800 hover:underline">Notas</Link>
+                <Link className="text-blue-800 hover:underline">Grupos</Link>
+                <Link className="text-blue-800 hover:underline">Eventos</Link>
+                <Link to='/chat' className="text-blue-800 hover:underline">Mensajes</Link>
+                <Link to='/ajustes' className="text-blue-800 hover:underline">Cuenta</Link>
+                <Link className="text-blue-800 hover:underline">Privacidad</Link>
             </div>
         </div>
     )
