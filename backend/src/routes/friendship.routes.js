@@ -10,7 +10,7 @@ import {
     verSolicitudes, 
     eliminarAmigo, 
     bloquearUser, 
-    perfilAmigo,
+    perfilUser,
     obtenerEstadoAmistad
 } from "../controllers/friendship.controllers.js";
 
@@ -24,6 +24,6 @@ router.delete("/eliminaramigo", protectRoute,eliminarAmigo)
 router.get("/buscarAmigoPorEmail", protectRoute,buscarAmigoPorEmail)
 router.get("/buscarAmigoPorUsername", protectRoute,buscarAmigoPorUsername)
 router.post("/bloquearuser",protectRoute,bloquearUser)
-router.post("/perfilamigo/:id",protectRoute,perfilAmigo)
+router.get("/perfilUser/:id",protectRoute,perfilUser)
 router.get("/estadoAmistad/:user1/:user2", protectRoute,obtenerEstadoAmistad);
 export default router;

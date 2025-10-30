@@ -185,15 +185,19 @@ export const obtenerEstadoAmistad = async (req, res) => {
       res.status(500).json({ message: "Error al obtener estado de amistad", error });
     }
 }
-export const perfilAmigo = async (req, res) => {
+export const perfilUser = async (req, res) => {
     try {
-        const userId = req.user._id;
-        //const { userId } = req.params;
-        const user = await User.findById(userId).select("-password");
-        if (!user) return res.status(404).json({ message: "Usuario no encontrado" });
+        const amigoId = req.params.id;
+        const user = await User.findById(amigoId).select("-password");
+        
+        if (!user) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+            console.log("Usuario no encontrado");
+        }
 
         res.json(user);
     } catch (error) {
-        res.status(500).json({ message: "Error al obtener perfil", error });
+        console.error(error);
+        res.status(500).json({ message: "Error al obtener perfil", error: error.message });
     }
-}
+};
