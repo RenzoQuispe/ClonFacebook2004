@@ -136,7 +136,7 @@ function RegisterPage() {
                     <Link className="text-blue-800">privacy</Link>
                 </div>
                 <p>
-                    ClonTheFacebook2004 &#169;
+                    Facebook-Retro &#169;
                 </p>
 
             </div>

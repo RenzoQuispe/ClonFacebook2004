@@ -28,13 +28,13 @@ function CardBuscar(){
                 border: '2px dashed #3a5898',
                 padding: '20px'
             }} className="flex flex-col h-55 mt-3  ">
-                <Link to='/perfil' className="text-blue-800">Mi Perfil[editar]</Link>
-                <Link to='/amigos' className="text-blue-800">Mis Amigos</Link>
-                <Link to='/grupos' className="text-blue-800">Mis Grupos</Link>
-                <Link to='/chat' className="text-blue-800">Mensajes</Link>
-                <Link to='/solicitudes' className="text-blue-800">Solicitudes</Link>
-                <Link to='/ajustes' className="text-blue-800">Mi Cuenta</Link>
-                <Link className="text-blue-800">Mi Privacidad</Link>
+                <Link to='/perfil' className="text-blue-800 hover:underline">Mi Perfil[editar]</Link>
+                <Link to='/amigos' className="text-blue-800 hover:underline">Mis Amigos</Link>
+                <Link to='/grupos' className="text-blue-800 hover:underline">Mis Grupos</Link>
+                <Link to='/chat' className="text-blue-800 hover:underline">Mensajes</Link>
+                <Link to='/solicitudes' className="text-blue-800 hover:underline">Solicitudes</Link>
+                <Link to='/ajustes' className="text-blue-800 hover:underline">Mi Cuenta</Link>
+                <Link className="text-blue-800 hover:underline">Mi Privacidad</Link>
             </div>
         </div>
     )
