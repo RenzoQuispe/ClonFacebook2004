@@ -3,6 +3,8 @@ import { estadoFriendship } from "../estados/estadoFriendship";
 import CardBuscar from "../components/CardBuscar";
 import { estadoAuth } from "../estados/estadoAuth";
 import SubBotonAmistad from "../components/SubBotonAmistad";
+import { useNavigate } from "react-router";
+
 function BuscarPage() {
     const {
         buscarAmigoPorUsername,
@@ -14,6 +16,8 @@ function BuscarPage() {
     const {
         authUser,
     } = estadoAuth()
+
+    const navigate = useNavigate();
 
     const [tipoBusqueda, setTipoBusqueda] = useState("Username");
     const [query, setQuery] = useState("");
@@ -79,12 +83,12 @@ function BuscarPage() {
                 </div>
 
                 {/* Mensaje de error */}
-                {error && <p className="text-red-500 mt-2">{error}</p>}
+                {error && <p className="text-red-500 mt-10 ml-10">{error}</p>}
 
                 {/* Resultados de búsqueda */}
                 <div className="mt-1">
                     {isSearchingFriend ? (
-                        <p className="text-gray-500">Buscando amigos...</p>
+                        <p className="text-gray-500 ml-10 mt-10">Buscando amigos...</p>
                     ) : amigosEncontrados.length === 0 ? (
                         <p className="ml-10 mt-10 text-gray-500">No se encontraron resultados.</p>
                     ) : (
@@ -92,26 +96,33 @@ function BuscarPage() {
                             {amigosEncontrados.map((amigo) => (
                                 <div
                                     key={amigo._id}
-                                    className="flex w-[400px] items-center gap-4 p-1 bg-white rounded-lg shadow-md hover:shadow-lg transition-all transform hover:scale-105"
-                                    onClick={() => console.log(`Ver perfil de ${amigo.username}`)}
+                                    className="flex items-center justify-between w-full h-[100px] max-w-[460px] p-2 bg-white rounded-lg shadow-xl hover:shadow-lg transition-all transform hover:scale-[1.02]"
+                                    onClick={() => navigate(`/perfil/usuario/${amigo._id}`)}
                                 >
-                                    <img
-                                        src={amigo.fotoPerfil || "/src/imagenes/defaultFoto.jpg"}
-                                        alt={`Foto de perfil de ${amigo.username}`}
-                                        className="w-20 h-20"
-                                        onError={(e) => (e.target.src = "/src/imagenes/defaultFoto.jpg")}
-                                    />
-                                    <div className="flex-1">
-                                        <p className="text-lg font-semibold">{amigo.username}</p>
-                                        <p className="text-gray-500">{amigo.email}</p>
+                                    {/* Lado izquierdo: foto + info */}
+                                    <div className="flex items-center gap-2 overflow-hidden">
+                                        <div className="w-20 h-20 flex-shrink-0">
+                                            <img
+                                                src={amigo.fotoPerfil || "/src/imagenes/defaultFoto.jpg"}
+                                                alt={`Foto de perfil de ${amigo.username}`}
+                                                className="w-full h-full object-cover rounded-md"
+                                                onError={(e) => (e.target.src = "/src/imagenes/defaultFoto.jpg")}
+                                            />
+                                        </div>
+
+                                        <div className="min-w-0 ml-3">
+                                            <p className="text-lg truncate font-semibold">{amigo.username}</p>
+                                            <p className="text-gray-500 text-sm truncate">{amigo.email}</p>
+                                        </div>
                                     </div>
 
-                                    {/* Subbotón separado al final */}
-                                    <SubBotonAmistad authId={authUser._id} amigoId={amigo._id} />
+                                    {/* Botón de amistad alineado al extremo derecho */}
+                                    <div className="flex-shrink-0">
+                                        <SubBotonAmistad authId={authUser._id} amigoId={amigo._id} />
+                                    </div>
                                 </div>
                             ))}
                         </div>
-
                     )}
                 </div>
             </div>

@@ -41,29 +41,29 @@ const SubBotonAmistad = ({ authId, amigoId }) => {
             case "none":
                 return (
                     <>
-                        <UserPlus className="w-5 h-5 text-white" />
-                        <span className="text-white text-sm">Añadir</span>
+                        <UserPlus className="w-6 h-6 text-white" />
+                        <span className="text-white text-lg">Añadir</span>
                     </>
                 );
             case "pending":
                 return (
                     <>
-                        <Mail className="w-5 h-5 text-yellow-400" />
-                        <span className="text-yellow-400 text-sm">Pendiente</span>
+                        <Mail className="w-6 h-6 text-yellow-600" />
+                        <span className="text-yellow-600 text-lg">Pendiente</span>
                     </>
                 );
             case "confirmed":
                 return (
                     <>
-                        <Check className="w-5 h-5 text-green-600" />
-                        <span className="text-green-600 text-sm">Amigos</span>
+                        <Check className="w-6 h-6 text-green-600" />
+                        <span className="text-green-600 text-lg">Amigos</span>
                     </>
                 );
             case "blocked":
                 return (
                     <>
-                        <Ban className="w-5 h-5 text-red-600" />
-                        <span className="text-red-600 text-sm">Bloqueado</span>
+                        <Ban className="w-6 h-6 text-red-600" />
+                        <span className="text-red-600 text-lg">Bloqueado</span>
                     </>
                 );
         }
@@ -72,12 +72,13 @@ const SubBotonAmistad = ({ authId, amigoId }) => {
     return (
         <button
             onClick={handleClick}
-            className={`flex items-center space-x-1 me-5 px-2 py-1 rounded-sm transition-colors
-        ${estado === "none" ? "bg-blue-800 hover:bg-blue-500" : ""}
-        ${estado === "pending" ? "bg-yellow-100" : ""}
-        ${estado === "confirmed" ? "bg-green-100" : ""}
-        ${estado === "blocked" ? "bg-red-100" : ""}
-      `}
+            style={{ fontFamily: '"Lucida Grande", Tahoma, Verdana, Arial, sans-serif', }}
+            className={`flex items-center justify-center space-x-1 me-5 px-2 py-1 rounded-lg transition-colors w-[120px]
+            ${estado === "none" ? "bg-blue-800 hover:bg-blue-500" : ""}
+            ${estado === "pending" ? "bg-yellow-100" : ""}
+            ${estado === "confirmed" ? "bg-green-100" : ""}
+            ${estado === "blocked" ? "bg-red-100" : ""}
+        `}
         >
             {renderContenido()}
         </button>

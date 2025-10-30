@@ -6,6 +6,7 @@ import AboutPage from "./pages/AboutPage"
 import AjustesPage from "./pages/AjustesPage"
 import AmigosPage from "./pages/AmigosPage"
 import PerfilPage from "./pages/PerfilPage"
+import PerfilUserPage from "./pages/PerfilUserPage"
 import BuscarPage from "./pages/BuscarPage"
 import GruposPage from "./pages/GruposPage"
 import SolicitudesPage from "./pages/SolicitudesPage"
@@ -57,6 +58,7 @@ function App() {
           <Route path="/cuenta" element={authUser ? <CuentaPage /> : <Navigate to="/login" />} />
           <Route path="/privacidad" element={authUser ? <PrivacidadPage /> : <Navigate to="/login" />} />
           <Route path="/fotosvideos" element={authUser ? <FotosVideosPage /> : <Navigate to="/login" />} />
+          <Route path="/perfil/usuario/:id" element={authUser ? <PerfilUserPage /> : <Navigate to="/login" />} />
           <Route path="*" element={<Navigate to={authUser ? "/" : "/login"} />} />
         </Routes>
         <Toaster />

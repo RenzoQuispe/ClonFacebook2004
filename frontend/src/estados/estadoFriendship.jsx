@@ -148,6 +148,16 @@ export const estadoFriendship = create((set, get) => (
                 console.error("Estado-Error al eliminar solicitud:", err.response?.data || err.message);
                 return { ok: false, message: err.response?.data?.message || "Error desconocido" };
             }
+        },
+        obtenerUserPorId: async (id) => {
+            try {
+                const res = await axiosInstance.get(`/friendship/perfilUser/${id}`);
+                console.log("Respuesta desde backend (axios):", res.data);
+                return res.data;
+            } catch (error) {
+                console.error("Error al obtener usuario:", error);
+                return null;
+            }
         }
     }
 )
