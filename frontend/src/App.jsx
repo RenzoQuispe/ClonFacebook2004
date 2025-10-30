@@ -36,27 +36,28 @@ function App() {
         <Loader className="size-10 animate-spin" />
       </div>
     );
-  
+
   return (
     <div className="bg-white min-h-screen flex flex-col">
       <Navbar />
       <div className="flex-grow flex py-1 justify-center">
         <Routes>
-          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/about" />} />
+          <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
           <Route path="/login" element={!authUser ? <LoginPage /> : <Navigate to="/" />} />
           <Route path="/register" element={!authUser ? <RegisterPage /> : <Navigate to="/" />} />
-          <Route path="/about" element={<AboutPage />} />
+          <Route path="/about" element={!authUser ? <AboutPage /> : <Navigate to="/" />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/amigos" element={authUser ? <AmigosPage /> : <Navigate to="/login" />} />
           <Route path="/perfil" element={authUser ? <PerfilPage /> : <Navigate to="/login" />} />
           <Route path="/ajustes" element={authUser ? <AjustesPage /> : <Navigate to="/login" />} />
-          <Route path="/buscar" element={authUser? <BuscarPage/> : <Navigate to="/login"/>} />
-          <Route path="/grupos" element={authUser? <GruposPage/> : <Navigate to="/login"/>} />
-          <Route path="/solicitudes" element={authUser? <SolicitudesPage/> : <Navigate to="/login"/>} />
-          <Route path="/chat" element={authUser? <ChatPage/> : <Navigate to="/login"/>} />
-          <Route path="/cuenta" element={authUser? <CuentaPage/> : <Navigate to="/login"/>} />
-          <Route path="/privacidad" element={authUser? <PrivacidadPage/> : <Navigate to="/login"/>} />
-          <Route path="/fotosvideos" element={authUser? <FotosVideosPage/> : <Navigate to="/login"/>} />
+          <Route path="/buscar" element={authUser ? <BuscarPage /> : <Navigate to="/login" />} />
+          <Route path="/grupos" element={authUser ? <GruposPage /> : <Navigate to="/login" />} />
+          <Route path="/solicitudes" element={authUser ? <SolicitudesPage /> : <Navigate to="/login" />} />
+          <Route path="/chat" element={authUser ? <ChatPage /> : <Navigate to="/login" />} />
+          <Route path="/cuenta" element={authUser ? <CuentaPage /> : <Navigate to="/login" />} />
+          <Route path="/privacidad" element={authUser ? <PrivacidadPage /> : <Navigate to="/login" />} />
+          <Route path="/fotosvideos" element={authUser ? <FotosVideosPage /> : <Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to={authUser ? "/" : "/login"} />} />
         </Routes>
         <Toaster />
       </div>

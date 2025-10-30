@@ -6,8 +6,8 @@ import { io } from "socket.io-client";
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 export const estadoAuth = create((set, get) => ({  //get para una funcion de estadoAuth dentro de una funcion de estadoAuth
-    authUser: null,
-    isCheckingAuth: null,
+    authUser: undefined,
+    isCheckingAuth: true,
     isLoggingIn: false,
     isSigningUp: false,
     isUpdatingprofile: false,
